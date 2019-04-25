@@ -1,0 +1,89 @@
+id,Company Name,RSP Type,Days,Belize City,,Palloti Junction,,Burrell Boom Junction,,Guinea Grass,,Orange Walk,,San Felipe,,Sarteneja,,Corozal,,Santa Elena Border
+1,Ovences Perez,Regular,1234560,,,,,,,,,,,,,,5:00am,6:45am,7:00am,7:15am
+2,Michael Frazer,Regular,123456,,,,,,,,,5:45am,6:00am,,,,,7:00am,7:15am,7:30am
+3,Omar Tillett,Regular,123456,,,,,,,,,6:00am,6:15am,,,,,7:15am,7:30am,7:45am
+4,Omar Tillett,Regular,123456,,,,,,,,,6:15am,6:30am,,,,,7:30am,7:45am,8:00am
+5,Terrence Flowers,Reg,0,,,,,5:40am,5:40am,,,6:35am,6:50am,,,,,7:50am,8:05am,8:20am
+6,Wilmer Lino,Shuttle,123456,,,,,,,,,,,,,,,7:30am,7:45am,8:00am
+7,Andrew chacon,Regular,123456,4:45am,5:00am,5:15am,5:15am,5:45am,5:45am,,,6:30am,6:45am,,,,,7:45am,8:00am,8:15am
+8,Tomas Chell,,1234560,,,,,,,,,6:45am,7:00am,,,,,8:00am,8:15am,8:30am
+9,Omar Tillett,Regular,1234560,5:15am,5:30am,5:45am,5:45am,6:15am,6:15am,,,7:00am,7:15am,,,,,8:15am,8:30am,8:45am
+10,Amelio Tillett Jr. B,Regular,1234560,,,,,,,,,7:15am,7:30am,,,,,8:30am,8:45am,9:00am
+11,Omar Tillett,Regular,1234560,5:45am,6:00am,6:15am,6:15am,6:45am,6:45am,,,7:30am,7:45am,,,,,8:45am,9:00am,9:15am
+12,Joshua's Bus Service,Regular,1234560,,,,,,,,,7:45am,8:00am,,,,,9:00am,9:15am,9:30am
+13,Arselito Sanchez,Regular,123456,,,,,,,6:45am,7:00am,8:00am,,,,,,,,
+14,Carlos Walker,Regular,0,,,,,7:00am,7:00am,08:15,,,,,,,,9:15am,9:30am,9:45am
+15,Alfonso Lind,Regular,123456,6:15am,6:30am,6:45am,6:45am,7:15am,7:15am,,,8:00am,8:15am,,,,,9:15am,9:30am,9:45am
+16,Silva's Bus Line,Express from BVO,1234560,6:15am,6:35am,6:50am,6:50am,7:05am,7:05am,,,8:00am,8:10am,,,,,9:10am,9:20am,9:35am
+17,Amelio Tillet Jr.,Regular,123456,,,,,,,,7:15am,8:15am,8:30am,,,,,9:30am,9:45am,10:00am
+18,Carlos Martinez,Regular,1234560,6:45am,7:00am,7:15am,7:15am,7:45am,7:45am,,,8:45am,9:00am,,,,,10:00am,10:15am,10:30am
+19,Silva's Bus Line,Express from BVO,1234560,7:15am,7:30am,7:45am,7:45am,8:00am,8:00am,,,8:45am,9:00am,,,,,9:45am,10:00am,10:15am
+20,Samuel Alamilla (Albions),Regular,1234560,7:15am,7:30am,7:45am,7:45am,8:15am,8:15am,,,9:15am,9:30am,,,,,10:30am,10:45am,11:00am
+21,Amelio Tillett Sr.,,123456,,,,,,,,,,10:00am,10:30am,,,,,,
+22,Samuel Alamilla (Albions),Regular,1234560,7:45am,8:00am,8:15am,8:15am,8:30am,8:30am,,,9:45am,10:00am,,,,,11:00am,11:15am,11:30am
+23,BBOC,Regular,1234560,8:30am,8:45am,9:00am,9:00am,9:30am,9:30am,,,10:30am,10:45am,,,,,11:45am,12:00nn,12:15pm
+24,BBOC,Regular,1234560,9:15am,9:30am,9:45am,9:45am,10:15am,10:15am,,,11:15am,11:30am,,,,,12:30pm,12:45pm,1:00pm
+25,BBOC,Regular,1234560,10:00am,10:15am,10:30am,10:30am,11:00am,11:00am,,,12:00nn,12:15nn,,,,,1:15pm,1:30pm,1:45pm
+26,Ovences Perez,Regular,123456,10:15am,10:30am,10:45am,10:45am,11:15am,11:15am,,,12:15pm,12:30pm,,,2:30pm,,,,
+27,BBOC,Regular,1234560,10:45am,11:00am,11:15am,11:15am,11:45am,11:45am,,,12:45pm,1:00pm,,,,,2:00pm,2:15pm,2:30pm
+28,BBOC,Regular,1234560,11:15am,11:30am,11:45am,11:45am,12:15pm,12:15pm,,,1:15pm,1:30pm,,,,,2:30pm,2:45pm,3:00pm
+29,Chell's Bus Service,Regular,123456,11:35am,11:50am,12:05pm,12:05pm,12:35pm,12:35pm,,,1:35pm,,,,,,,,
+30,Victor Camal,Regular,123456,11:45am,12:00nn,12:15pm,12:15pm,12:45pm,12:45pm,,,1:45pm,2:00pm,,,,,3:00pm,3:15pm,3:30pm
+31,Valdemar Perez,Express,123456,11:45am,12:00nn,12:15pm,12:15pm,12:30pm,12:30pm,,,1:30pm,1:45pm,,,3:45pm,,,,
+32,Arselito Sanchez,Regular,123456,,,,,,,12:45pm,1:00pm,2:00pm,,,,,,,,
+33,Cabrera's Bus Service,Regular,1234560,12:15pm,12:30pm,12:45pm,12:45pm,1:15pm,1:15pm,,,2:15pm,2:30pm,,,,,3:30pm,3:45pm,4:00pm
+34,Rudy Morales,Regular,1234560,12:30pm,12:45pm,1:00pm,1:00pm,1:30pm,1:30pm,,,2:30pm,2:45pm,,,,,3:45pm,4:00pm,4:15pm
+35,Rudy Morales,Express,1234560,12:45pm,1:00pm,1:15pm,1:15pm,1:30pm,1:30pm,,,2:30pm,2:45pm,,,,,3:30pm,3:45pm,4:00pm
+36,Valencia UB RMP Run,UB BmpRun,Friday's,,,,,1:45pm,1:45pm,,,2:45pm,3:00pm,,,,,3:45pm,,
+37,Rudy Morales,Regular,1234560,1:15pm,1:30pm,1:45pm,1:45pm,2:15pm,2:15pm,,,3:15pm,3:30pm,,,,,4:30pm,4:45pm,5:00pm
+38,Wilmer Lino,Shuttle,123456,,,,,,,,,,,,,,,4:30pm,4:45pm,5:00pm
+39,Amelio Tillet Sr.,,123456,,,,,,,,,,3:30pm,4:00pm,,,,,,
+40,Valencia's Bus Service,Regular,1234560,1:45pm,2:00pm,2:15pm,2:15pm,2:45pm,2:45pm,,,3:45pm,4:00pm,,,,,5:00pm,5:15pm,5:30pm
+41,Marvin Sanchez,Regular,123456,,,,,,,3:45pm,4:00pm,5:00pm,,,,,,,,
+42,Amelio Tillett Sr.,,123456,,,,,,,,,,4:30pm,5:00pm,,,,,,
+43,Valdemar Perez,Regular,123456,2:15pm,2:30pm,2:45pm,2:45pm,3:15pm,3:15pm,,,4:15pm,4:30pm,,,6:30pm,,,,
+44,Valencia's Bus Service,Regular,1234560,2:15pm,2:30pm,2:45pm,2:45pm,3:15pm,3:15pm,,,4:15pm,4:30pm,,,,,5:30pm,5:45pm,6:00pm
+45,Amelio Tillett Jr.,Regular,1234560,2:45pm,3:00pm,3:15pm,3:15pm,3:45pm,3:45pm,,,4:45pm,5:00pm,,,,,6:00pm,6:15pm,6:30pm
+46,Amelio Tillett Jr. A (Has Temp),Regular,1234560,3:00pm,3:15pm,3:30pm,3:30pm,4:00pm,4:00pm,,,4:45pm,5:00pm,,,,,,,
+47,Amelio Tillett Sr.,,123456,,,,,,,,,,5:30pm,6:00pm,,,,,,
+48,Amelio Tillett Jr.,Regular,1234560,3:15pm,3:30pm,3:45pm,3:45pm,4:15pm,4:15pm,,,5:15pm,5:30pm,,,,,6:30pm,6:45pm,7:00pm
+49,Valdemar Perez,Express,1234560,3:45pm,4:00pm,4:15pm,4:15pm,4:30pm,4:30pm,,,5:30pm,5:45pm,,,7:45pm,,,,
+50,Valdemar Perez,Express,123456,3:45pm,4:00pm,4:15pm,4:15pm,4:30pm,4:30pm,,,5:30pm,,,,,,,,
+51,Amelio Tillett Jr.,Regular,1234560,3:45pm,4:00pm,4:15pm,4:15pm,4:45pm,4:45pm,,,5:45pm,6:00pm,,,,,7:00pm,7:15pm,7:30pm
+52,Leon Enriquez,Express Bmp to O/W,123456,,,,,4:45pm,4:45pm,,,5:45pm,,,,,,,,
+53,Michael Frazer,Express,12345,4:00pm,4:15pm,4:30pm,4:30pm,5:00pm,5:00pm,,,5:45pm,,,,,,,,
+54,Rene Tillett,Express,123456,4:15pm,4:30pm,4:45pm,4:45pm,5:00pm,5:00pm,,,6:00pm,,,,,,,,
+55,Rene Tillett,Regular,123456,4:15pm,4:30pm,4:45pm,4:45pm,5:15pm,5:15pm,,,6:15pm,6:30pm,,,,,7:30pm,7:45pm,8:00pm
+56,Ernesto Cruz,Regular,1234560,4:20pm,4:35pm,4:50pm,4:50pm,5:20pm,5:20pm,,,6:20pm,,,,,,,,
+57,Ernesto Cruz,Expess,1234560,4:20pm,4:35pm,4:50pm,4:50pm,5:05pm,5:05pm,,,6:05pm,,,,,,,,
+58,Rene Tillett,Express,123456,4:30pm,4:40pm,4:55am,4:55am,5:10pm,5:10pm,,,6:10pm,,,,,,,,
+59,Rene Tillett,to August Pine Ridge (N/S),123456,4:25pm,4:40pm,5:05pm,5:05pm,5:20pm,5:20pm,,,6:20pm,,,,,,,,
+60,Valdemar Perez,Express,123456,4:30pm,4:45pm,5:00pm,5:00pm,5:15pm,5:15pm,,,6:15pm,,,,,,,,
+61,Valdemar Perez,Express,123456,4:30pm,4:45pm,5:00pm,5:00pm,5:15pm,5:15pm,,,6:15pm,,,,,,,,
+62,Albion's (123456),Express,123456,4:30pm,4:45pm,5:00pm,5:00pm,5:15pm,5:15pm,,,6:15pm,,,,,,,,
+63,Rene Tillett,Express,123456,4:30pm,4:45pm,5:00pm,5:00pm,5:15pm,5:15pm,,,6:15pm,,,,,,,,
+64,Rudy Morales from BVO,Reg,1234560,,,,,5:15pm,5:15pm,,,6:15pm,6:30pm,,,,,7:30pm,,
+65,Rudy Morales,Workers Exp,12345,4:30pm,4:45pm,5:00pm,5:00pm,5:15pm,5:15pm,,,6:15pm,6:30pm,,,,,7:15pm,,
+66,Rene Tillett,Express,123456,4:40pm,4:55pm,5:10pm,5:10pm,5:25pm,5:25pm,,,6:25pm,,,,,,,,
+67,Alfredo Cobb,Regular,123456,4:45pm,5:00pm,5:15pm,5:15pm,5:45pm,5:45pm,,,8:15pm,8:20pm,,,,,,,
+68,Valencia's (From BVO),Express,1234560,,,,,5:30pm,5:30pm,,,6:30pm,6:45pm,,,,,7:30pm,,
+69,Rudy Morales,Workers Exp,12345,4:45pm,5:00pm,5:15pm,5:15pm,5:30pm,5:30pm,,,,,,,,,7:30pm,,
+70,Rene Tillett,Regular,123456,4:45pm,,5:15pm,5:15pm,5:45pm,5:45pm,,,6:45pm,,,,,,,,
+71,Ovences Perez,Express,123456,4:45pm,5:00pm,5:15pm,5:15pm,5:30pm,5:30pm,,,6:30pm,6:45apm,,,8:45pm,,,,
+72,Joshua's Bus Service,Exp-To Douglas,1234560,4:45pm,5:00pm,5:15pm,5:15pm,5:45pm,5:45pm,,,6:30pm,,,,,,,,
+73,Albion's Bus Service,Express,12345,4:45pm,5:00pm,5:15pm,5:15pm,5:30pm,5:30pm,,,6:30pm,,,,,,,,
+74,Amelio Tillett Jr.,Express,1234560,4:45pm,5:00pm,5:15pm,5:15pm,5:30pm,5:30pm,6:30pm,,,,,,,,,,
+75,Valdemar Perez,Express,123456,4:50pm,5:05pm,5:20pm,5:20pm,5:35pm,5:35pm,,,6:35pm,,,,,,,,
+76,Joel Armstrong,Express,12345,4:50pm,5:05pm,5:20pm,5:20pm,5:35pm,5:35pm,,,6:35pm,,,,,,,,
+77,Valencia's (From BVO),Regular,1234560,,,,,6:00pm,6:00pm,,,7:00pm,7:15apm,,,,,8:15pm,,
+78,Amelio Tillett Sr. A To Ginea Grass,Express,,5:00pm,5:15pm,5:30pm,5:30pm,5:45pm,5:45pm,,,7:00pm,7:15pm,,,,,,,
+79,Cecil Jesse,Workers Exp,12345,5:00pm,5:15pm,5:30pm,5:30pm,5:45pm,5:45pm,,,6:45pm,,,,,,,,
+80,Julio Camal,Express,123456,5:05pm,5:20pm,5:35pm,5:35pm,6:05pm,6:05pm,,,6:50pm,7:05pm,,,,,8:05pm,8:25pm,8:40pm
+81,Amelio Tillett Sr.,Express,1234560,5:15pm,5:30pm,5:45pm,5:45pm,6:00pm,6:00pm,,,7:00pm,7:15pm,7:45pm,,,,,,
+82,Rudy Morales,Regular,1234560,5:15pm,5:30pm,5:45pm,5:45pm,6:15pm,6:15pm,,,7:15pm,7:30pm,,,,,8:30pm,,
+83,Omar Tillett,Express,123456,5:30pm,5:45pm,6:00pm,6:00pm,6:15pm,6:15pm,,,7:15pm,,,,,,,,
+84,Amelio Tillett Sr.,Regular,123456,5:45pm,6:00pm,6:15pm,6:15pm,6:45pm,6:45pm,,,7:45pm,,,,,,,,
+85,Omar Tillett,Regular,1234560,6:15pm,6:30pm,6:45pm,6:45pm,7:15pm,7:15pm,,,8:15pm,8:30pm,,,,,9:30pm,,
+86,Joshua's Bus Service,Regular,1234560,6:45pm,7:00pm,7:15pm,7:15pm,7:45pm,7:45pm,,,8:45pm,,,,,,,,
+87,Samuel Alamilla (Albions),Regular,1234560,7:15pm,7:30pm,7:45pm,7:45pm,8:15pm,8:15pm,,,9:15pm,9:30pm,,,,,10:30pm,10:45pm,11:00pm
+88,Amelio Tillett Jr. B,,1234560,,,,,,,,,8:00am,8:15pm,8:45pm,,,,,,

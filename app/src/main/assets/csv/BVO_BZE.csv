@@ -1,0 +1,57 @@
+id,Company Name,RSP Type,Days,Benque Viejo,,San Ignacio,,Belmopan,,Belize City
+1,J & J Bus Line,Regular,1234560,02:15,02:30,02:45,03:00,04:00,04:15,05:45
+2,J & J Bus Line,Regular,1234560,02:45,03:00,03:15,03:30,04:30,04:45,06:15
+3,Silva's Bus Line,Regular,1234560,03:15,03:30,03:45,04:00,05:00,05:15,06:45
+4,Silva's Bus Line,Express to S/E,12345,03:15,03:30,03:45,04:00,04:45,05:00,06:15
+5,Silva's Bus Line,Regular,123456,03:30,03:45,04:00,04:15,05:15,05:30,07:00
+6,Silva's Bus Line,Regular,1234560,04:00,04:15,04:30,04:45,05:45,06:00,07:30
+7,Silva's Bus Line,Express,123456,04:30,04:45,05:00,05:15,06:00,06:15,07:15
+8,Maria Rodriguez,Workers,1234560,,,,,06:00,06:15,07:30
+9,Silva's Bus Line,Regular,12345,04:30,04:45,05:00,05:15,06:15,06:30,08:00
+10,Westline,Regular,12345,05:00,05:15,05:30,05:45,06:45,07:00,08:30
+11,Westline,Express,12345,05:00,05:15,05:30,05:45,06:30,06:45,08:00
+12,Westline,Direct,1234560,05:15,05:30,05:45,06:00,,,07:30
+13,Westline,Express,123456,05:30,05:45,06:00,06:15,07:00,07:15,08:30
+14,Westline,Regular,1234560,05:30,05:45,06:00,06:15,07:15,07:30,09:00
+15,Westline,Express,1234560,06:00,06:15,06:30,06:45,07:30,07:45,09:00
+16,Westline,Regular,123456,06:00,06:15,06:30,06:45,07:45,08:00,09:30
+17,Westline,Workers Exp,12345,06:15,06:30,06:45,07:00,07:45,,
+18,Westline,Workers Exp,1234560,06:30,06:45,07:00,07:15,08:00,,
+19,Silva's Bus Line,Workers Exp,1234560,06:35,06:50,07:05,07:20,08:05,,
+20,Westline,Regular,1234560,06:45,07:00,07:15,07:30,08:30,08:45,10:15
+21,Westline,Express,123456,06:45,07:00,07:15,07:30,08:15,08:30,09:45
+22,Westline,Regular,1234560,07:15,07:30,07:45,08:00,09:00,09:15,10:45
+23,Westline,Regular,1234560,07:45,08:00,08:15,08:30,09:30,09:45,11:15
+24,Westline,Express,123456,07:45,08:00,08:15,08:30,09:15,09:30,10:45
+25,BBOC,Express,12345,08:10,08:25,08:40,08:45,09:30,09:45,11:00
+26,BBOC,Regular,1234560,08:15,08:30,08:45,09:00,10:00,10:15,11:45
+27,BBOC,Regular,1234560,08:45,09:00,09:15,09:30,10:30,10:45,12:15
+28,BBOC,Regular,1234560,09:15,09:30,09:45,10:00,11:00,11:15,12:45
+29,BBOC,Express,123456,09:15,09:30,09:45,10:00,10:45,11:00,12:15
+30,Shaw's Bus Line,Regular,123456,09:45,10:00,10:15,10:30,11:30,11:45,13:15
+31,Shaw's Bus Line,Regular,123456,10:15,10:30,10:45,11:00,12:00,12:15,13:45
+32,Valencia,UB BMP Run,5,,,,,12:15,12:30,13:45
+33,Shaw's Bus Line,Regular,123456,10:45,11:00,11:15,11:30,12:30,12:45,14:15
+34,Shaw's Bus Line,Express,,11:15,11:30,11:45,12:00,12:45pm,1:00pm,2:15pm
+35,Shaw's Bus Line,Regular,123456,11:15,11:30,11:45,12:00,1:00pm,1:15pm,2:45pm
+36,Shaw's Bus Line,Regular,123456,11:45,12:00nn,12:15,12:30,1:30pm,1:45pm,3:15pm
+37,Westline,Regular,123456,12:15,12:30,12:45,1:00pm,2:00pm,2:15pm,3:45pm
+38,Westline,Express,123456,12:15,12:30,12:45,1:00pm,1:45pm,2:00pm,3:15pm
+39,Westline,Regular,123456,12:45,1:00pm,1:15pm,1:30pm,2:30pm,2:45pm,4:15pm
+40,Westline,Regular,123456,1:15pm,1:30pm,1:45pm,2:00pm,3:00pm,3:15pm,4:45pm
+41,Westline,Regular,123456,1:45pm,2:00pm,2:15pm,2:30pm,3:30pm,3:45pm,5:15pm
+42,Leon Enriquez,Express to O/W,123456,,,,,3:30pm,3:45pm,4:45pm
+43,Westline,Express,123456,2:15pm,2:30pm,2:45pm,3:00pm,3:45pm,4:00pm,5:15pm
+44,Westline,Regular,123456,2:15pm,2:30pm,2:45pm,3:00pm,4:00pm,4:15pm,5:45pm
+46,Morales,Express,123456,2:30pm,2:45pm,3:00pm,3:15pm,4:00pm,4:15pm,Boom
+45,Westline,Regular,123456,2:45pm,3:00pm,3:15pm,3:30pm,4:30pm,4:45pm,6:15pm
+47,Valencia,Express,123456,2:45pm,3:00pm,3:15pm,3:30pm,4:15pm,4:30pm,Boom
+48,Valencia,Express,123456,3:15pm,3:30pm,3:45pm,4:00pm,4:45pm,5:00pm,Boom
+49,BBOC,Regular,123456,3:15pm,3:30pm,3:45pm,4:00pm,5:00pm,5:15pm,6:45pm
+50,BBOC,Express,1234,3:30pm,3:45pm,4:00pm,4:15pm,5:00pm,5:15pm,6:30pm
+51,BBOC,Regular,123456,3:45pm,4:00pm,4:15pm,4:30pm,5:30pm,5:45pm,7:15pm
+52,BBOC,Regular,123456,4:15pm,4:30pm,4:45pm,5:00pm,6:00pm,6:15pm,7:45pm
+53,BBOC,Regular,123456,4:45pm,5:00pm,5:15pm,5:30pm,6:30pm,6:45pm,8:15pm
+54,BBOC,Regular,123456,5:15pm,5:30pm,5:45pm,6:00pm,7:00pm,7:15pm,8:45pm
+55,Westline,Regular,123456,6:45pm,7:00pm,7:15pm,7:30pm,8:30pm,8:45pm,10:15pm
+56,BBOC (49),Express,50,3:00pm,3:15pm,3:30pm,3:45pm,4:30pm,4:45pm,6:00pm

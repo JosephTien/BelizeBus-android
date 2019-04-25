@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:id="@+id/map_marker">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/marker_field"
+        android:textColor="@color/white"
+        android:id="@+id/map_marker_name"
+        android:text=" Belmopan " android:textStyle="bold" android:textSize="18sp"
+        android:paddingBottom="5dp" android:paddingTop="5dp" android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorButton"
+        android:id="@+id/map_marker_triangle"
+        android:layout_gravity="center"
+        android:text="▼" android:textSize="30sp"
+        android:layout_marginTop="-20dp"/>
+</LinearLayout>
