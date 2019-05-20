@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_bus"
+        android:title="@string/btn_bus"></item>
+    <item
+        android:id="@+id/page_ferry"
+        android:title="@string/btn_ferry"></item>
+    <item
+        android:id="@+id/page_taxi"
+        android:title="@string/btn_taxi"></item>
+    <item
+        android:id="@+id/page_ado"
+        android:title="@string/btn_ado"></item>
+</menu>

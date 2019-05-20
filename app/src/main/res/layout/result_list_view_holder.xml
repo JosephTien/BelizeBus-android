@@ -50,7 +50,7 @@
                 android:background="@color/colorText"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/result_item_time_arrow1"
@@ -70,7 +70,7 @@
                 android:background="@color/colorText"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/result_item_time_arrow2"
@@ -90,7 +90,7 @@
                 android:background="@color/colorText"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <include layout="@layout/result_item_buses" />

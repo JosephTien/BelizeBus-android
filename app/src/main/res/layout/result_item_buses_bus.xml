@@ -152,14 +152,14 @@
                 android:layout_width="0dp"
                 android:layout_height="10dp"
                 android:layout_weight="4"
-                android:background="@drawable/line_obj">
+                android:background="@drawable/result_line_obj">
 
                 <TextView
                     android:id="@+id/line_dot_left"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center_vertical|start"
-                    android:background="@drawable/line_dot"
+                    android:background="@drawable/result_line_dot"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
@@ -167,14 +167,14 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:background="@drawable/line_dot" />
+                    android:background="@drawable/result_line_dot" />
 
                 <TextView
                     android:id="@+id/line_dot_right"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center_vertical|end"
-                    android:background="@drawable/line_dot"
+                    android:background="@drawable/result_line_dot"
                     app:layout_constraintEnd_toEndOf="parent" />
             </FrameLayout>
 

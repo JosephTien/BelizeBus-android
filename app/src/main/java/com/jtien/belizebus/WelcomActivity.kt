@@ -5,14 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.content.Intent
 import android.os.Handler
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 
 class WelcomeActivity : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome)
-        hideSystemUI()
+        setContentView(R.layout.welcome)
+        //hideSystemUI()
+        supportActionBar?.hide()
         mHandler.sendEmptyMessageDelayed(GOTO_MAIN_ACTIVITY, 3000)//3秒跳轉
         Data.assets = assets
         Data.initData()

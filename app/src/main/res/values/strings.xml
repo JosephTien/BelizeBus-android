@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">BelizeBus</string>
-    <string name="choose_start">Choose start station</string>
-    <string name="choose_end" >Choose end station</string>
+    <string name="choose_start">Start Terminal...</string>
+    <string name="choose_end" >End Terminal...</string>
     <string name="btn_before" >Arrive Before...</string>
     <string name="btn_after" >Depart After...</string>
     <string name="btn_map" >Map</string>
     <string name="btn_search" >Search</string>
+    <string name="btn_fullmode" >Full</string>
+    <string name="btn_bus" >Bus</string>
+    <string name="btn_ferry" >Ferry</string>
+    <string name="btn_ado" >ADO</string>
+    <string name="btn_taxi" >Taxi</string>
+    <string name="sign_to" >↓</string>
     <string name="btn_history" >↺</string>
     <string name="btn_switch" >⇅</string>
     <string name="btn_clear" >×</string>
@@ -13,8 +19,13 @@
     <string name="bar_result" >Result</string>
     <string name="msg_notSameDay" >Only search in a day</string>
     <string name="msg_notValidRange" >Time range is not valid</string>
-    <string name="msg_stationEmpty" >Should choose Stations</string>
+    <string name="msg_stationEmpty" >Should choose Terminals</string>
     <string name="msg_stationNotSame" >Departure should\'nt equal arrival</string>
-    <string name="result_item_time_arror" >\>\></string>
     <string name="msg_noInternetConnection">No Internet Connection</string>
+    <string name="result_item_time_arror" >\>\></string>
+
+    <string name="today" >Today</string>
+    <string name="tour" >Tour</string>
+    <string name="bus" >Bus</string>
+    <string name="ferry" >Ferry</string>
 </resources>

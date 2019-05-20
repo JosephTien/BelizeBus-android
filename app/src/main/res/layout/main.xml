@@ -1,18 +1,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:screenOrientation="portrait"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
+    android:screenOrientation="portrait"
     tools:context="com.jtien.belizebus.MainActivity">
 
+    <!--
     <TextView
         android:id="@+id/blank1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3" />
+    -->
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/blank1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+    </android.support.constraint.ConstraintLayout>
 
     <Spinner
         android:id="@+id/spinner_depart"
@@ -22,8 +33,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="3"
-        android:background="@drawable/field_half_upper"
-        android:popupBackground="@drawable/dialog"
+        android:background="@drawable/main_field_half_upper"
+        android:popupBackground="@drawable/main_dialog"
         android:spinnerMode="dialog" />
 
     <Button
@@ -34,11 +45,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="3"
-        android:background="@drawable/field_half_lower"
+        android:background="@drawable/main_field_half_lower"
+        android:gravity="center_vertical"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
         android:text="@string/btn_after"
-        android:gravity="center_vertical"
         android:textAllCaps="false"
         android:textColor="@color/colorText"
         android:textSize="24sp" />
@@ -49,7 +60,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="3">
-    <!--
+        <!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -110,7 +121,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/button_switch"
+            android:background="@drawable/main_button_switch"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,7 +144,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </android.support.constraint.ConstraintLayout>
         -->
-    <!--</RelativeLayout>-->
+        <!--</RelativeLayout>-->
     </android.support.constraint.ConstraintLayout>
 
     <Spinner
@@ -144,8 +155,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="3"
-        android:background="@drawable/field_half_upper"
-        android:popupBackground="@drawable/dialog"
+        android:background="@drawable/main_field_half_upper"
+        android:popupBackground="@drawable/main_dialog"
         android:spinnerMode="dialog" />
 
     <Button
@@ -156,11 +167,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="3"
-        android:background="@drawable/field_half_lower"
+        android:background="@drawable/main_field_half_lower"
+        android:gravity="center_vertical"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
         android:text="@string/btn_before"
-        android:gravity="center_vertical"
         android:textAllCaps="false"
         android:textColor="@color/colorText"
         android:textSize="24sp" />
@@ -181,10 +192,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="2"
-            android:background="@drawable/button_map"
+            android:background="@drawable/main_button_map"
             android:text="@string/btn_map"
             android:textAllCaps="false"
             android:textColor="@color/colorBackground"
@@ -198,10 +208,10 @@
             android:id="@+id/btn_submit"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="2"
-            android:background="@drawable/button_submit"
+            android:background="@drawable/main_button_submit"
             android:text="@string/btn_search"
             android:textAllCaps="false"
             android:textColor="@color/colorBackground"
@@ -212,9 +222,31 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
+    <!--
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/blank3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <Button
+            android:id="@+id/btn_record"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="☆"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+    -->
+
     <TextView
         android:id="@+id/blank3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4" />
+        android:layout_weight="3" />
+
 </LinearLayout>

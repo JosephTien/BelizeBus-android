@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#142129</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorBackground">#FDF0DD</color>
+    <color name="colorBackground_water">#99D9EA</color>
     <color name="colorButton">#B48183</color>
     <color name="colorField">#fae2be</color>
     <color name="colorText">#64442B</color>

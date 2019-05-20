@@ -1,12 +1,8 @@
 package com.jtien.belizebus
 
 import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.annotation.TargetApi
+import android.animation.ObjectAnimator
 import android.app.ActionBar
-import android.content.Context
-import android.content.res.Resources
-import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
@@ -15,20 +11,15 @@ import android.widget.*
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.animation.ValueAnimator
-import android.content.AsyncQueryHandler
-import android.opengl.ETC1.getHeight
-import android.opengl.ETC1.getWidth
-import android.util.DisplayMetrics
-import android.util.Log
 import android.util.TypedValue
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
-import android.view.ViewTreeObserver
-import kotlin.contracts.contract
+import android.view.animation.Animation
+import java.util.*
+import kotlin.concurrent.fixedRateTimer
 
 class ResultActivity : AppCompatActivity() {
 
@@ -41,7 +32,7 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
+        setContentView(R.layout.result)
         ResultActivity.instance = this
 
         ///init/recyclerview
@@ -56,7 +47,8 @@ class ResultActivity : AppCompatActivity() {
 
         ///init/actionbar
         supportActionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
-        supportActionBar?.setCustomView(R.layout.abs_layout)
+        supportActionBar?.setCustomView(R.layout.common_title)
+        supportActionBar?.customView?.findViewById<TextView>(R.id.tvTitle)?.text = getString(R.string.bar_result)
         supportActionBar?.setTitle(R.string.bar_result)
 
         ///init/tag
@@ -70,14 +62,35 @@ class ResultActivity : AppCompatActivity() {
         val result_tag_station_from = findViewById<TextView>(R.id.result_tag_station_from)
         val result_tag_station_mid = findViewById<TextView>(R.id.result_tag_station_mid)
         val result_tag_station_to = findViewById<TextView>(R.id.result_tag_station_to)
-        val bar_dot_mid = findViewById<View>(R.id.bar_dot_mid)
+        val bar_dot_mid = findViewById<View>(R.id.result_bar_dot_mid)
 
         if(MainActivity.instance?.departDayAndTime!=null){
             result_tag_range_mid.text = MainActivity.instance?.departDayAndTime?.weekDay.toString()
         }else if (MainActivity.instance?.arriveDayAndTime!=null){
             result_tag_range_mid.text = MainActivity.instance?.arriveDayAndTime?.weekDay.toString()
         }else{
-            result_tag_range_mid.text = "Today"
+            val weekDayIdx = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1
+            var weekDayStr = WeekDay.values()[weekDayIdx].toString()
+            var todayStr = getString(R.string.today)
+            result_tag_range_mid.text = todayStr
+
+            var toggle = false
+            val va = ValueAnimator.ofInt(0, 0).setDuration(1000)
+            va.setRepeatCount(ValueAnimator.INFINITE);
+            va.addListener(object: Animator.AnimatorListener{
+                override fun onAnimationRepeat(animation: Animator?) {
+                    toggle = !toggle
+                    if(toggle){
+                        result_tag_range_mid.text = weekDayStr
+                    }else{
+                        result_tag_range_mid.text = todayStr
+                    }
+                }
+                override fun onAnimationCancel(animation: Animator?) {}
+                override fun onAnimationStart(animation: Animator?) {}
+                override fun onAnimationEnd(animation: Animator?) {}
+            })
+            va.start()
         }
 
         result_tag_range_from.text = MainActivity.instance?.departDayAndTime?.time
@@ -135,7 +148,7 @@ class ResultListAdapter(private val myDataset: MutableList<Array<Bus>>) :
     override fun getItemCount() = myDataset.size
 }
 
-class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), Animator.AnimatorListener, ValueAnimator.AnimatorUpdateListener{
     val result_item_from = itemView?.findViewById<TextView>(R.id.result_item_time_from)
     val result_item_mid = itemView?.findViewById<TextView>(R.id.result_item_time_mid)
     val result_item_to = itemView?.findViewById<TextView>(R.id.result_item_time_to)
@@ -155,7 +168,6 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
     }
 
     fun setResult(buses: Array<Bus>){
-
         val arrowString = ">>"
         if(buses.size==1){
             val bus = buses[0]
@@ -166,8 +178,8 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
             result_item_mid.setTextColor(ContextCompat.getColor(result_item_mid.context, R.color.colorText))
             result_item_arrow2.text = ""
             result_item_to.text = bus.arrive[bus.toIdx]
-            removeAppendedBus()
-            result_item_buses.addBusDetail(bus)
+            //removeAppendedBus()
+            //result_item_buses.addBusDetail(bus)
         }else if (buses.size==2){
             result_item_from.text = buses[0].depart[buses[0].fromIdx]
             result_item_arrow1.text = arrowString
@@ -175,10 +187,10 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
             result_item_mid.text = buses[0].arrive[buses[0].toIdx]
             result_item_arrow2.text = arrowString
             result_item_to.text = buses[1].arrive[buses[1].toIdx]
-            removeAppendedBus()
-            removeAppendedBus()
-            result_item_buses.addBusDetail(buses[0])
-            result_item_buses.addBusDetail(buses[1])
+            //removeAppendedBus()
+            //removeAppendedBus()
+            //result_item_buses.addBusDetail(buses[0])
+            //result_item_buses.addBusDetail(buses[1])
         }
         this.buses = buses
         initHeightTarget()
@@ -236,24 +248,16 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
         if(minHeight == null || maxHeight == null){return}
         visable = state
         val initHeight = itemView.height
+        var targetHeight = itemView.height
         if(visable){
-            val va = ValueAnimator.ofInt(initHeight, maxHeight!!).setDuration(mil)
-            va.addUpdateListener { animation ->
-                val value = animation.animatedValue as Int
-                itemView.layoutParams.height = value
-                itemView.requestLayout()
-            }
-            va.start()
+            targetHeight = maxHeight!!
         }else{
-            val va = ValueAnimator.ofInt(initHeight, minHeight!!).setDuration(mil)
-            va.addUpdateListener { animation ->
-                val value = animation.animatedValue as Int
-                itemView.layoutParams.height = value
-                itemView.requestLayout()
-            }
-            va.start()
+            targetHeight = minHeight!!
         }
-
+        val va = ValueAnimator.ofInt(initHeight, targetHeight).setDuration(mil)
+        va.addUpdateListener(this)
+        va.addListener(this)
+        va.start()
         /*
         result_item_buses.animate()
                 .translationY(result_item_buses.getHeight().toFloat() * when(visable) {true -> 1 false-> -1})
@@ -267,6 +271,27 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
                 })
                 */
     }
+    override fun onAnimationUpdate(animation: ValueAnimator?) {
+        val value = animation!!.animatedValue as Int
+        itemView.layoutParams.height = value
+        itemView.requestLayout()
+    }
+    override fun onAnimationEnd(animation: Animator?) {
+        if(!visable) {
+            for (bus in buses) {
+                result_item_buses.addBusDetail(bus)
+            }
+        }
+    }
+    override fun onAnimationStart(animation: Animator?) {
+        if(visable){
+            for(bus in buses){
+                result_item_buses.addBusDetail(bus)
+            }
+        }
+    }
+    override fun onAnimationRepeat(animation: Animator?) {}
+    override fun onAnimationCancel(animation: Animator?) {}
 
     private fun LinearLayout.addBusDetail(bus: Bus){
         // Layout inflater
@@ -282,9 +307,15 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
         var result_item_buses_bus_route_time_to = view.findViewById<TextView>(R.id.result_item_buses_bus_route_time_to)
 
         result_item_buses_bus_company.text = " " + bus.company + " "
+        if(bus.company==""){
+            result_item_buses_bus_company.visibility = View.INVISIBLE
+        }
         //" " + bus.destinationStation + " "
         //result_item_buses_bus_rsp.text = bus.rsp.substring(0..2)
         result_item_buses_bus_rsp.text = " " + bus.rsp + " "
+        if(bus.rsp==""){
+            result_item_buses_bus_rsp.visibility = View.INVISIBLE
+        }
 
         result_item_buses_bus_route_time_from.text = bus.depart[bus.fromIdx]
         result_item_buses_bus_route_time_to.text = bus.arrive[bus.toIdx]

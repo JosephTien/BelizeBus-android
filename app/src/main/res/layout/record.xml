@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:screenOrientation="portrait"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context="com.jtien.belizebus.RecordActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Good to Look"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <com.jtien.belizebus.Rating
+        android:id="@+id/record_rating_look"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="0">
+
+    </com.jtien.belizebus.Rating>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Easy to Know"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <com.jtien.belizebus.Rating
+        android:id="@+id/record_rating_know"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="0">
+
+    </com.jtien.belizebus.Rating>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Easy to Use"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <com.jtien.belizebus.Rating
+        android:id="@+id/record_rating_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="0"></com.jtien.belizebus.Rating>
+
+    <TextView
+        android:id="@+id/record_name_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Name / Email"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/record_name_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textSize="18sp" /> />
+
+    <TextView
+        android:id="@+id/record_comment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Comment"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/record_comment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/record_feedback"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="5dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/record_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0"
+        android:background="@color/colorButton"
+        android:text="Submit"
+        android:textColor="@color/colorText"
+        android:textSize="24sp" />
+
+</LinearLayout>

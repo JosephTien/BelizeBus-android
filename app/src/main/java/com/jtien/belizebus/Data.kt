@@ -10,6 +10,9 @@ import java.io.InputStreamReader
 import java.util.ArrayList
 import java.util.*
 
+enum class Kind{
+    bus, ferry
+}
 enum class WeekDay{
     Sun, Mon, Tue, Wed, Thu, Fri, Sat
 }
@@ -58,14 +61,14 @@ class DayAndTime(val date: Date){
         }
     }
 }
-
-
 class Reference {
     companion object {
-        val stations = arrayOf("Benque Viejo", "Belize City", "Belmopan", "Burrell Boom Junction"
+        val stations = arrayOf("Benque Viejo", "Belize City", "Belmopan"
                 , "Corozal", "Dangriga", "Guinea Grass", "Independence", "Orange Walk"
-                , "Placenia", "Punta Gorda", "San Ignacio", "Santa Elena Border")
-                //, "San Felipe", "Sarteneja")
+                , "Placencia", "Punta Gorda", "San Ignacio", "Santa Elena Border")
+                //, "Burrell Boom Junction", "San Felipe", "Sarteneja")
+        val ports = arrayOf("Belize City","Caye Caulker", "San Pedro", "Chetumal")
+        /*
         val RSPtype  = arrayOf("Regular", "Non-Stop", "Non-Stop/S/E", "Workers", "Workers Exp",
                 "Direct", "UB BMP Run", "Express", "Express to S/E", "Express to O/W", "Shuttle", "O/W only", "O/W (Reg)", "Regular O/W")
         val companys1 = arrayOf("Ovences Perez", "Eugene Jex", "Michael Frazer", "Omar Tillett" , "Terrence Flowers", "Andrew chacon", "Tomas Chell",
@@ -75,7 +78,7 @@ class Reference {
         val companys2 = arrayOf("J & J Bus Line", "Silva's Bus Line", "Guerra’s Bus Line", "Maria Rodriguez", "Westline", "Silva's Bus Line", "BBOC", "Shaw’s Bus Line", "Leon Enriquez")
         val companys3 = arrayOf("Bryant Williams", "Dolores & Rose Sho", "James Bus Line", "Dalmon Ritchie", "Glen Young and Sons", "Griga Line", "Alberto Coleman", "Cecil Gill",
                 "Edmund Pandy", "Mateo Polanco")
-
+        */
     }
 }
 
@@ -146,16 +149,20 @@ class Sheet(val name: String
 //注意時間格式
 //注意類型名稱統一性
 //確定空白不會有問題
-//Hopkin
 //必須要有編號
 //am, pm 小寫
 //pm上加 但排除12
+//Hopkin
+//palacencia
 
 class Data{
     companion object {
         var assets: AssetManager? = null
         var sheets: MutableList<Sheet> = mutableListOf<Sheet>()
         var result: MutableList<Array<Bus>> = mutableListOf<Array<Bus>>()
+        fun showLog(str: String){
+            Log.v("MyLog", str)
+        }
         fun initData() {
             Data.readCSV("BVO_BZE")?.let { sheets.add(it) }
             Data.readCSV("BZE_BVO")?.let { sheets.add(it) }
@@ -163,6 +170,10 @@ class Data{
             Data.readCSV("BZE_SE")?.let { sheets.add(it) }
             Data.readCSV("PG_BZE")?.let { sheets.add(it) }
             Data.readCSV("SE_BZE")?.let { sheets.add(it) }
+            Data.readCSV("ferry_leave")?.let { sheets.add(it) }
+            Data.readCSV("ferry_return")?.let { sheets.add(it) }
+            Data.readCSV("ferry_leave_int")?.let { sheets.add(it) }
+            Data.readCSV("ferry_return_int")?.let { sheets.add(it) }
             /*
             sheets.add(Sheet("WESTERN", arrayOf("Benque Viejo", "San Ignacio", "Belmopan", "Belize City")))
             sheets[0].buses.add(
@@ -201,9 +212,11 @@ class Data{
             if (sheetHasFromTo != null) {
                 sheetHasFromTo.buses.forEach {
                     it.setFromToIdx(sheetHasFromTo.fromIdx, sheetHasFromTo.toIdx)
+                    var last = sheetHasFromTo.stations.count()-1
+                    while(it.arrive[last]==""){last-=1}
                     it.setStation(sheetHasFromTo.stations[it.fromIdx]
                             , sheetHasFromTo.stations[it.toIdx]
-                            , sheetHasFromTo.stations.last())
+                            , sheetHasFromTo.stations[last])
                 }
                 sheetHasFromTo.buses.filter {
                     it.isAvaliableOn(day) && it.isAvaliableOn(after, before)
@@ -244,15 +257,19 @@ class Data{
                 if (resultSheetFrom != null && resultSheetTo != null) {
                     resultSheetFrom!!.buses.forEach {
                         it.setFromToIdx(resultSheetFrom!!.fromIdx, resultSheetFrom!!.toIdx)
+                        var last = resultSheetFrom!!.stations.count()-1
+                        while(it.arrive[last]==""){last-=1}
                         it.setStation(resultSheetFrom!!.stations[it.fromIdx]
                                 , resultSheetFrom!!.stations[it.toIdx]
-                                , resultSheetFrom!!.stations.last())
+                                , resultSheetFrom!!.stations[last])
                     }
                     resultSheetTo!!.buses.forEach {
                         it.setFromToIdx(resultSheetTo!!.fromIdx, resultSheetTo!!.toIdx)
+                        var last = resultSheetTo!!.stations.count()-1
+                        while(it.arrive[last]==""){last-=1}
                         it.setStation(resultSheetTo!!.stations[it.fromIdx]
                                 , resultSheetTo!!.stations[it.toIdx]
-                                , resultSheetTo!!.stations.last())
+                                , resultSheetTo!!.stations[last])
                     }
                     val buses1 = resultSheetFrom!!.buses.filter { it.isAvaliableOn(day) && it.isAvaliableOn(after, before) }
                     val buses2 = resultSheetTo!!.buses.filter { it.isAvaliableOn(day) && it.isAvaliableOn(after, before) }
@@ -265,6 +282,9 @@ class Data{
                         }
                     }
                 }
+            }
+            Data.result.sortBy {
+                it[0].depart[it[0].fromIdx]
             }
         }
         fun array2String(arr: Array<Int>): String{
@@ -333,24 +353,32 @@ class Data{
                     stationList.add(tokens[i])
                 }
                 val sheet = Sheet(filename, stationList.toTypedArray())
-
                 // Read the file line by line starting from the second line
                 line = fileReader.readLine()
                 while (line != null) {
-                    val tokens = line.split(",")
-                    val arrive: MutableList<String> = mutableListOf()
-                    val depart: MutableList<String> = mutableListOf()
-                    for (i in 4 until tokens.size step 2) {
-                        arrive.add(translateTimeStr(tokens[i]))
-                        if (i + 1 < tokens.size) depart.add(translateTimeStr(tokens[i + 1]))
-                        else depart.add("")
-                    }
-                    sheet.buses.add(Bus(tokens[0].toInt(), tokens[1], tokens[2],
-                            tokens[3].toCharArray().map{it.toInt()-('0'.toInt())}.toTypedArray(),
-                            arrive.toTypedArray(),
-                            depart.toTypedArray()
+                    try {
+                        val tokens = line.split(",")
+                        val arrive: MutableList<String> = mutableListOf()
+                        val depart: MutableList<String> = mutableListOf()
+                        for (i in 4 until tokens.size step 2) {
+                            arrive.add(translateTimeStr(tokens[i]))
+                            if (i + 1 < tokens.size) depart.add(translateTimeStr(tokens[i + 1]))
+                            else depart.add("")
+                        }
+                        var daysStr = tokens[3]
+                        if(daysStr==""){
+                            daysStr = "0123456"
+                        }
+                        sheet.buses.add(Bus(tokens[0].toInt(), tokens[1], tokens[2],
+                                daysStr.toCharArray().map{it.toInt()-('0'.toInt())}.toTypedArray(),
+                                arrive.toTypedArray(),
+                                depart.toTypedArray()
                         )
-                    )
+                        )
+                    }catch (e: Exception) {
+                        println("Input Character Error!")
+                        e.printStackTrace()
+                    }
                     line = fileReader.readLine()
                 }
                 return sheet

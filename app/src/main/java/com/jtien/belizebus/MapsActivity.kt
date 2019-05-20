@@ -1,12 +1,10 @@
 package com.jtien.belizebus
 
-import android.Manifest
 import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 
@@ -19,15 +17,6 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import com.google.android.gms.maps.model.*
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.annotation.NonNull
-
-
-
-
-
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -36,7 +25,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
+        setContentView(R.layout.maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
         val mapFragment = supportFragmentManager
@@ -56,35 +45,45 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
      * installed Google Play services and returned to the app.
      */
 
-    private val stations = arrayOf(
-            Station("Benque Viejo", LatLng(17.078188, -89.137215)),
-            Station("Belize City", LatLng(17.494178, -88.193227)),
-            Station("Belmopan", LatLng(17.249722, -88.774723)),
-            Station("Burrell Boom Junction", LatLng(17.568479, -88.407648)),// not bus station
-            Station("Corozal", LatLng(18.392959, -88.388322)),// not bus station
-            Station("Dangriga", LatLng(16.961170, -88.221012)),
-            Station("Guinea Grass", LatLng(17.959253, -88.589738)),// not bus station
-            Station("Independence", LatLng(16.534899, -88.423808)),
-            Station("Orange Walk", LatLng(18.081563, -88.561811)),
-            Station("Placenia", LatLng(16.525696, -88.369829)),// not bus station
-            Station("Punta Gorda", LatLng(16.101556, -88.801661)),
-            Station("San Ignacio", LatLng(17.158880, -89.069430)),
-            Station("Santa Elena Border", LatLng(18.486174, -88.400268))
+    private val terminals_samp = arrayOf(
+            Terminal("Benque Viejo", LatLng(17.078188, -89.137215), Kind.bus),
+            Terminal("Belize City", LatLng(17.494178, -88.193227), Kind.bus),
+            Terminal("Belmopan", LatLng(17.249722, -88.774723), Kind.bus),
+            /* not bus station*/ Terminal("Burrell Boom Junction", LatLng(17.568479, -88.407648), Kind.bus),
+            /* not bus station*/ Terminal("Corozal", LatLng(18.392959, -88.388322), Kind.bus),
+            Terminal("Dangriga", LatLng(16.961170, -88.221012), Kind.bus),
+            /* not bus station*/ Terminal("Guinea Grass", LatLng(17.959253, -88.589738), Kind.bus),
+            Terminal("Independence", LatLng(16.534899, -88.423808), Kind.bus),
+            Terminal("Orange Walk", LatLng(18.081563, -88.561811), Kind.bus),
+            /* not bus station*/ Terminal("Placenia", LatLng(16.525696, -88.369829), Kind.bus),
+            Terminal("Punta Gorda", LatLng(16.101556, -88.801661), Kind.bus),
+            Terminal("San Ignacio", LatLng(17.158880, -89.069430), Kind.bus),
+            Terminal("Santa Elena Border", LatLng(18.486174, -88.400268), Kind.bus),
+            Terminal("Belize City", LatLng(17.494116, -88.184718), Kind.ferry, "(Water Taxi)"),//water taxi
+            Terminal("Belize City", LatLng(17.495196, -88.186644), Kind.ferry, "(Ocean Ferry)"),//ocean ferry
+            Terminal("Caye Caulker", LatLng(17.743445, -88.023459), Kind.ferry),
+            Terminal("San Pedro", LatLng(17.918149, -87.961981), Kind.ferry),
+            Terminal("Chetumal", LatLng(18.493027, -88.299298), Kind.ferry)
     )
-    private var choosenStations: Array<Int> = arrayOf()
+    private var terminals = terminals_samp
+    private var choosenTerminals: Array<Int> = arrayOf()
     private fun setReturnResult(){
         val intent = Intent()
         val bundleBack = Bundle()
-        val n = choosenStations.count()
+        val n = choosenTerminals.count()
         if(n < 1){
-            bundleBack.putInt("station_depart", 0)
+            //bundleBack.putInt("station_depart", 0)
+            bundleBack.putString("station_depart", "")
         }else{
-            bundleBack.putInt("station_depart", choosenStations[0]+1)
+            //bundleBack.putInt("station_depart", choosenStations[0]+1)
+            bundleBack.putString("station_depart", terminals[choosenTerminals[0]].name)
         }
         if(n < 2){
-            bundleBack.putInt("station_arrive", 0)
+            //bundleBack.putInt("station_arrive", 0)
+            bundleBack.putString("station_arrive", "")
         }else{
-            bundleBack.putInt("station_arrive", choosenStations[1]+1)
+            //bundleBack.putInt("station_arrive", choosenStations[1]+1)
+            bundleBack.putString("station_arrive", terminals[choosenTerminals[1]].name)
         }
         intent.putExtras(bundleBack)
         setResult(Activity.RESULT_OK, intent)
@@ -92,18 +91,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        stations.forEachIndexed { index, station ->
+        terminals = terminals_samp.filter { it.kind == MainActivity.mode_kind }.toTypedArray()
+        terminals.forEachIndexed { index, terminal ->
             val marker = MarkerOptions()
-                    .position(station.latlng)
-                    .title(station.name)
-                    .icon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(station.name)))
-            stations[index].marker = mMap.addMarker(marker)
-            stations[index].marker?.tag = index
+                    .position(terminal.latlng)
+                    .title(terminal.name)
+                    .icon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(terminal.name, terminal.note)))
+            terminals[index].marker = mMap.addMarker(marker)
+            terminals[index].marker?.tag = index
         }
 
         val boundsBuilder = LatLngBounds.builder()
-        for(station in stations){
-            boundsBuilder.include(station.latlng)
+        for(terminal in terminals){
+            boundsBuilder.include(terminal.latlng)
         }
         val bounds = boundsBuilder.build()
         mMap.setLatLngBoundsForCameraTarget(bounds)
@@ -122,36 +122,41 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
 
     override fun onMarkerClick(marker: Marker): Boolean {
-        if(choosenStations.count()>0 && choosenStations.last()==marker.tag){
-            marker.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(stations[marker.tag as Int].name)))
-            choosenStations = choosenStations.dropLast(1).toTypedArray()
+        var name = terminals[marker.tag as Int].name
+        var note = terminals[marker.tag as Int].note
+        if(choosenTerminals.count()>0 && choosenTerminals.last()==marker.tag){
+            marker.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(name, note)))
+            choosenTerminals = choosenTerminals.dropLast(1).toTypedArray()
             return true
         }
-        if(choosenStations.count()==2){
-            choosenStations = arrayOf()
-            stations.forEach {
+        if(choosenTerminals.count()==2){
+            choosenTerminals = arrayOf()
+            terminals.forEach {
                 //it.marker?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 //it.marker?.hideInfoWindow()
-                it.marker?.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(it.name)))
+                it.marker?.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(it.name, it.note)))
             }
         }
         //marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         //marker.showInfoWindow()
-        var name = stations[marker.tag as Int].name
-        if(choosenStations.count()==0){
+        if(choosenTerminals.count()==0){
             name = "① $name"
         }else{
             name = "② $name"
         }
-        marker.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(name)))
-        choosenStations = choosenStations.plus(marker.tag as Int)
+        marker.setIcon(BitmapDescriptorFactory.fromBitmap(getMarkerIcon(name, note)))
+        choosenTerminals = choosenTerminals.plus(marker.tag as Int)
         setReturnResult()
         return true
     }
-    private fun getMarkerIcon(name: String): Bitmap {
-        val layout = LayoutInflater.from(this).inflate(R.layout.map_marker, null)
+    private fun getMarkerIcon(name: String, note: String): Bitmap {
+        val layout = LayoutInflater.from(this).inflate(R.layout.maps_marker, null)
         val view = layout.findViewById<TextView>(R.id.map_marker_name)
-        view.text = name
+        var str = name
+        if(note!=""){
+            str+="\n$note"
+        }
+        view.text = str
         val marker = layout.findViewById<LinearLayout>(R.id.map_marker)
         return loadBitmapFromView(marker)!!
     }
@@ -169,7 +174,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     //------------------------------------------------------------------------------------------------
 }
 
-class Station(val name: String, val latlng: LatLng){
+class Terminal(val name: String, val latlng: LatLng, val kind: Kind, val note: String = ""){
     var marker: Marker? = null
 }
 /*
