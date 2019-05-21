@@ -2,6 +2,7 @@ package com.jtien.belizebus
 
 import android.app.ActionBar
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -19,6 +20,7 @@ import android.net.ConnectivityManager
 import android.net.Uri
 import android.view.Menu
 import android.view.MenuItem
+import android.content.DialogInterface
 
 
 class MainActivity : AppCompatActivity(){
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity(){
     lateinit var btn_full: Button
     lateinit var btn_depart: Button
     lateinit var btn_arrive: Button
+    lateinit var btn_info: Button
 
     var departStation: String = ""
     var arriveStation: String = ""
@@ -108,6 +111,17 @@ class MainActivity : AppCompatActivity(){
                 startActivity(intent)
                 finish()
             }
+            true
+        }
+        R.id.page_ado -> {
+            var intent = Intent()
+            intent.setClass(this, MainAdoActivity::class.java)
+            startActivity(intent)
+            finish()
+            true
+        }
+        R.id.page_taxi -> {
+            showToast(getString(R.string.tobecontinue))
             true
         }
         else -> {
@@ -284,6 +298,7 @@ class MainActivity : AppCompatActivity(){
         btn_depart = findViewById<Button>(R.id.btn_depart)
         btn_arrive = findViewById<Button>(R.id.btn_arrive)
         btn_map = findViewById<Button>(R.id.btn_map)
+        btn_info = findViewById<Button>(R.id.btn_info)
 
         ///init/assign/datetimepicker
         singleDateTimePicker = SingleDateAndTimePickerDialog.Builder(this)
@@ -327,6 +342,27 @@ class MainActivity : AppCompatActivity(){
         }
 
         ///init/btn
+        if(mode_kind==Kind.bus){
+            btn_info.visibility = View.INVISIBLE
+        }else{
+            btn_info.setOnClickListener{
+                val companies = arrayOf("Ocean Ferry", "Water Taxi")
+                var builder = AlertDialog.Builder(this)
+                builder.setTitle(getString(R.string.companies))
+                builder.setItems(companies, DialogInterface.OnClickListener { dialog, which ->
+                    if(which==0){
+                        val url = "http://www.oceanferrybelize.com"
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                    }else if(which==1){
+                        val url = "http://www.belizewatertaxi.com"
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                    }
+                })
+                builder.show()
+            }
+        }
+
+
         btn_map.setOnClickListener {
             if(ConnectivityHelper.isConnectedToNetwork(applicationContext)){
                 requestMap()

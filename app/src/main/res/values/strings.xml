@@ -15,6 +15,7 @@
     <string name="btn_history" >↺</string>
     <string name="btn_switch" >⇅</string>
     <string name="btn_clear" >×</string>
+    <string name="btn_info" >ⓘ</string>
     <string name="bar_search" >Search</string>
     <string name="bar_result" >Result</string>
     <string name="msg_notSameDay" >Only search in a day</string>
@@ -24,8 +25,11 @@
     <string name="msg_noInternetConnection">No Internet Connection</string>
     <string name="result_item_time_arror" >\>\></string>
 
+    <string name="tobecontinue" >Not Available yet.\nTo be continue...</string>
     <string name="today" >Today</string>
     <string name="tour" >Tour</string>
     <string name="bus" >Bus</string>
     <string name="ferry" >Ferry</string>
+    <string name="companies" >Companies</string>
+
 </resources>

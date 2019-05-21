@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ado_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Marlin Espadas Ltd."
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/ado_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A bus departs from Chetumal daily at 9:30 am and goes to Flores with stops at Corozal, Orange Walk, Belize City, Belmopan, San Ignacio and Benque Viejo. (a/c and wifi)
+
+A bus departs from Flores daily at 7:30 am and makes stops at the same locations on the way to Chetumal
+
+For reservations: +501-615 9009 / 627 9990.
+
+https://www.facebook.com/Marlin-Espadas-M%C3%A9xico-SA-de-CV-911522482202854/
+"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ado_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="San Juan Travel Services"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="The San Juan bus waits outside the ADO terminal and departs daily at 7:00 am.
+In Belize City, buses arrive at and depart from the Marine Terminal on North Front Street near the Swing Bridge, and are not scheduled to stop anywhere else in Belize. Buses operate on Sundays and public holidays. Not all buses are air-conditioned.
+
+Fare: US$10.00 to Belize City and US$35.00 to Flores.
+"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ado_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Corozal to Chetumal"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buses depart from Corozal bus terminal about every half hour beginning at 7:00 am; last departure about 6 or 7 pm. Most of the buses that go to Chetumal originate from Belize City and Orange Walk. Smaller mini-buses and taxi vans (colectivos) also travel between Corozal and the border — they wait near the bus terminal
+"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ado_title4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chetumal to Corozal"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buses depart from the Nuevo Mercado Lázaro Cárdenas (New Market) at Chetumal about every half hour. The departure time of the last bus from Nuevo Mercado is about 6pm.
+
+Duration: about 45 minutes
+Cost: about BZ$3.00.
+"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ado_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancún to Belize City"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ado_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Departs from ADO terminal daily at 7:30 am and 10:15 pm with stops at Playa del Carmen, Tulum, Bacalar, Corozal and Orange Walk.
+\n
+\nFare to BC: MX$892 (Jan 2019)
+\nTrip time: 8.5 hours
+\n"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ado_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Belize City to Cancún"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Departs from BC bus terminal daily at 11:00 am and 7:30 pm with stops at Orange Walk, Corozal, Bacalar, Tulum, Playa del Carmen and Cancún Airport.
+\n
+\nFare: BZ$19 is paid at BC, and the remainder of the fare is paid when the bus stops at Bacalar (Jan 2019).
+\n"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/ado_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="More Detail"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="https://www.ado.com.mx/
+\nBelize City: 625-5900
+\nOrange Walk: 624-8200, 302-2240
+\nCorozal: 663-3014
+\n"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

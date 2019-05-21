@@ -23,6 +23,19 @@
         android:layout_height="0dp"
         android:layout_weight="3">
 
+        <Button
+            android:id="@+id/btn_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:text="@string/btn_info"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <Spinner
@@ -248,5 +261,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3" />
+
 
 </LinearLayout>
