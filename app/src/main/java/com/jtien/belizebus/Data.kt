@@ -242,13 +242,15 @@ class Data{
                         sheetsHasTo.add(sheet)
                     }
                 }
+                var found = false
                 for (sheetFrom in sheetsHasFrom) {
                     for (sheetTo in sheetsHasTo) {
                         sheetFrom.stations.forEachIndexed { idxFromMid, stationFromMid ->
                             sheetTo.stations.forEachIndexed { idxToMid, stationToMid ->
-                                if (idxFromMid > sheetFrom.fromIdx && idxToMid < sheetTo.toIdx && stationFromMid == stationToMid) {
+                                if (!found && idxFromMid > sheetFrom.fromIdx && idxToMid < sheetTo.toIdx && stationFromMid == stationToMid) {
                                     resultSheetFrom = sheetFrom.setFromToIdx(sheetFrom.fromIdx, idxFromMid)
                                     resultSheetTo = sheetTo.setFromToIdx(idxToMid, sheetTo.toIdx)
+                                    found = true
                                 }
                             }
                         }
