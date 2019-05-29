@@ -343,10 +343,14 @@ class MainActivity : AppCompatActivity(){
 
         ///init/btn
         if(mode_kind==Kind.bus){
-            btn_info.visibility = View.INVISIBLE
+            //btn_info.visibility = View.INVISIBLE
+            btn_info.setOnClickListener{
+                val url = "https://www.belmopanonline.com/belize-bus-schedules"
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
         }else{
             btn_info.setOnClickListener{
-                val companies = arrayOf("Ocean Ferry", "Water Taxi")
+                val companies = arrayOf("Ocean Ferry", "San Pedro Water Taxi")
                 var builder = AlertDialog.Builder(this)
                 builder.setTitle(getString(R.string.companies))
                 builder.setItems(companies, DialogInterface.OnClickListener { dialog, which ->

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">BelizeBus</string>
+    <string name="choose_start">Iniciar terminal...</string>
+    <string name="choose_end" >Destino...</string>
+    <string name="btn_before" >Llegar Antes...</string>
+    <string name="btn_after" >Partirá Después...</string>
+    <string name="btn_map" >Mapa</string>
+    <string name="btn_search" >Buscar</string>
+    <string name="btn_fullmode" >Completa</string>
+    <string name="btn_bus" >Autobús</string>
+    <string name="btn_ferry" >Taxi acuático</string>
+    <string name="btn_ado" >ADO México Autobús</string>
+    <string name="btn_taxi" >Taxi</string>
+    <string name="sign_to" >↓</string>
+    <string name="btn_history" >↺</string>
+    <string name="btn_switch" >⇅</string>
+    <string name="btn_clear" >×</string>
+    <string name="btn_info" >ⓘ</string>
+    <string name="bar_search" >Buscar</string>
+    <string name="bar_result" >Resultado</string>
+    <string name="msg_notSameDay" >Solo buscar en un día</string>
+    <string name="msg_notValidRange" >El rango de tiempo no es válido</string>
+    <string name="msg_stationEmpty" >Debes elegir terminales</string>
+    <string name="msg_stationNotSame" >El destino no debe ser el mismo que el de inicio.</string>
+    <string name="msg_noInternetConnection">Sin conexión a Internet</string>
+    <string name="result_item_time_arror" >\>\></string>
+
+    <string name="Mon" >Lun</string>
+    <string name="Tue" >Mar</string>
+    <string name="Wed" >Mié</string>
+    <string name="Thu" >Jue</string>
+    <string name="Fri" >Vie</string>
+    <string name="Sat" >Sab</string>
+    <string name="Sun" >Dom</string>
+
+    <string name="tobecontinue" >Aun no está disponible.\nContinuará...</string>
+    <string name="today" >Hoy</string>
+    <string name="tour" >Excursión</string>
+    <string name="bus" >Autobús</string>
+    <string name="ferry" >Taxi acuático</string>
+    <string name="companies" >Compañías</string>
+
+</resources>

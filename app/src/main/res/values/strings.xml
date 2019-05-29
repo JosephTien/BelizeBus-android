@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">BelizeBus</string>
+    <string name="app_name">BeliceBus</string>
     <string name="choose_start">Start Terminal...</string>
-    <string name="choose_end" >End Terminal...</string>
+    <string name="choose_end" >Destination...</string>
     <string name="btn_before" >Arrive Before...</string>
     <string name="btn_after" >Depart After...</string>
     <string name="btn_map" >Map</string>
     <string name="btn_search" >Search</string>
     <string name="btn_fullmode" >Full</string>
     <string name="btn_bus" >Bus</string>
-    <string name="btn_ferry" >Ferry</string>
-    <string name="btn_ado" >ADO</string>
+    <string name="btn_ferry" >Water Taxi</string>
+    <string name="btn_ado" >ADO Mexico Bus</string>
     <string name="btn_taxi" >Taxi</string>
     <string name="sign_to" >↓</string>
     <string name="btn_history" >↺</string>
@@ -24,6 +24,14 @@
     <string name="msg_stationNotSame" >Departure should\'nt equal arrival</string>
     <string name="msg_noInternetConnection">No Internet Connection</string>
     <string name="result_item_time_arror" >\>\></string>
+
+    <string name="Mon" >Mon</string>
+    <string name="Tue" >Tue</string>
+    <string name="Wed" >Wed</string>
+    <string name="Thu" >Thu</string>
+    <string name="Fri" >Fri</string>
+    <string name="Sat" >Sat</string>
+    <string name="Sun" >Sun</string>
 
     <string name="tobecontinue" >Not Available yet.\nTo be continue...</string>
     <string name="today" >Today</string>

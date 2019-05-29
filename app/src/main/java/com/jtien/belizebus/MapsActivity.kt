@@ -49,17 +49,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             Terminal("Benque Viejo", LatLng(17.078188, -89.137215), Kind.bus),
             Terminal("Belize City", LatLng(17.494178, -88.193227), Kind.bus),
             Terminal("Belmopan", LatLng(17.249722, -88.774723), Kind.bus),
-            /* not bus station*/ Terminal("Burrell Boom Junction", LatLng(17.568479, -88.407648), Kind.bus),
-            /* not bus station*/ Terminal("Corozal", LatLng(18.392959, -88.388322), Kind.bus),
+            Terminal("Burrell Boom Junction", LatLng(17.584995, -88.350234), Kind.bus),
+            Terminal("Corozal", LatLng(18.392938, -88.388348), Kind.bus),
             Terminal("Dangriga", LatLng(16.961170, -88.221012), Kind.bus),
-            /* not bus station*/ Terminal("Guinea Grass", LatLng(17.959253, -88.589738), Kind.bus),
+            /* not bus station*/ Terminal("Guinea Grass", LatLng(18.032650, -88.561340), Kind.bus),
             Terminal("Independence", LatLng(16.534899, -88.423808), Kind.bus),
             Terminal("Orange Walk", LatLng(18.081563, -88.561811), Kind.bus),
-            /* not bus station*/ Terminal("Placenia", LatLng(16.525696, -88.369829), Kind.bus),
+            Terminal("Placenia", LatLng(16.516999, -88.368299), Kind.bus),
             Terminal("Punta Gorda", LatLng(16.101556, -88.801661), Kind.bus),
             Terminal("San Ignacio", LatLng(17.158880, -89.069430), Kind.bus),
             Terminal("Santa Elena Border", LatLng(18.486174, -88.400268), Kind.bus),
-            Terminal("Belize City", LatLng(17.494116, -88.184718), Kind.ferry, "(Water Taxi)"),//water taxi
+            Terminal("Belize City", LatLng(17.494116, -88.184718), Kind.ferry, "(San Pedro Water Taxi)"),//water taxi
             Terminal("Belize City", LatLng(17.495196, -88.186644), Kind.ferry, "(Ocean Ferry)"),//ocean ferry
             Terminal("Caye Caulker", LatLng(17.743445, -88.023459), Kind.ferry),
             Terminal("San Pedro", LatLng(17.918149, -87.961981), Kind.ferry),

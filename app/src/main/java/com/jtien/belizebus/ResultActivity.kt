@@ -26,6 +26,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var weekdayMap:Map<String, String>
     companion object {
         var instance: ResultActivity? = null
     }
@@ -53,6 +54,17 @@ class ResultActivity : AppCompatActivity() {
 
         ///init/tag
         setTag()
+
+        ///init/weekdayMap
+        weekdayMap = mapOf(
+                "Mon" to getString(R.string.Mon),
+                "Tue" to getString(R.string.Tue),
+                "Wed" to getString(R.string.Wed),
+                "Thu" to getString(R.string.Thu),
+                "Fri" to getString(R.string.Fri),
+                "Sat" to getString(R.string.Sat),
+                "Sun" to getString(R.string.Sun)
+        )
     }
 
     fun setTag(){
@@ -65,9 +77,11 @@ class ResultActivity : AppCompatActivity() {
         val bar_dot_mid = findViewById<View>(R.id.result_bar_dot_mid)
 
         if(MainActivity.instance?.departDayAndTime!=null){
-            result_tag_range_mid.text = MainActivity.instance?.departDayAndTime?.weekDay.toString()
+            var weekDayStr = MainActivity.instance?.departDayAndTime?.weekDay.toString()
+            result_tag_range_mid.text = weekdayMap[weekDayStr]
         }else if (MainActivity.instance?.arriveDayAndTime!=null){
-            result_tag_range_mid.text = MainActivity.instance?.arriveDayAndTime?.weekDay.toString()
+            var weekDayStr = MainActivity.instance?.arriveDayAndTime?.weekDay.toString()
+            result_tag_range_mid.text = weekdayMap[weekDayStr]
         }else{
             val weekDayIdx = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1
             var weekDayStr = WeekDay.values()[weekDayIdx].toString()
@@ -81,7 +95,7 @@ class ResultActivity : AppCompatActivity() {
                 override fun onAnimationRepeat(animation: Animator?) {
                     toggle = !toggle
                     if(toggle){
-                        result_tag_range_mid.text = weekDayStr
+                        result_tag_range_mid.text = weekdayMap[weekDayStr]
                     }else{
                         result_tag_range_mid.text = todayStr
                     }
@@ -316,6 +330,24 @@ class ResultListSelectionViewHolder(itemView: View) : RecyclerView.ViewHolder(it
         if(bus.rsp==""){
             result_item_buses_bus_rsp.visibility = View.INVISIBLE
         }
+
+        var toggle = false
+        val va = ValueAnimator.ofInt(0, 0).setDuration(1000)
+        va.setRepeatCount(ValueAnimator.INFINITE);
+        va.addListener(object: Animator.AnimatorListener{
+            override fun onAnimationRepeat(animation: Animator?) {
+                toggle = !toggle
+                if(toggle){
+                    result_item_buses_bus_rsp.bringToFront()
+                }else{
+                    result_item_buses_bus_company.bringToFront()
+                }
+            }
+            override fun onAnimationCancel(animation: Animator?) {}
+            override fun onAnimationStart(animation: Animator?) {}
+            override fun onAnimationEnd(animation: Animator?) {}
+        })
+        va.start()
 
         result_item_buses_bus_route_time_from.text = bus.depart[bus.fromIdx]
         result_item_buses_bus_route_time_to.text = bus.arrive[bus.toIdx]

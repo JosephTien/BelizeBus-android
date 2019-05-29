@@ -63,10 +63,10 @@ class DayAndTime(val date: Date){
 }
 class Reference {
     companion object {
-        val stations = arrayOf("Benque Viejo", "Belize City", "Belmopan"
+        val stations = arrayOf("Benque Viejo", "Belize City", "Belmopan", "Burrell Boom Junction"
                 , "Corozal", "Dangriga", "Guinea Grass", "Independence", "Orange Walk"
                 , "Placencia", "Punta Gorda", "San Ignacio", "Santa Elena Border")
-                //, "Burrell Boom Junction", "San Felipe", "Sarteneja")
+                // , "San Felipe", "Sarteneja")
         val ports = arrayOf("Belize City","Caye Caulker", "San Pedro", "Chetumal")
         /*
         val RSPtype  = arrayOf("Regular", "Non-Stop", "Non-Stop/S/E", "Workers", "Workers Exp",

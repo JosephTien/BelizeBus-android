@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ado_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="de Cancún a Belice Ciudad"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/ado_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salimos de la terminal de ADO todos los días a las 7:30 am y 10:15 pm con paradas en Playa del Carmen, Tulum, Bacalar, Corozal y Orange Walk.
+\n
+\nTasa: MX$892 (Ene 2019)
+\nHora: 8.5 horas
+\n"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ado_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="de Belice Ciudad a Cancún"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salimos de la terminal de autobuses de BC todos los días a las 11:00 am y 7:30 pm con paradas en Orange Walk, Corozal, Bacalar, Tulum, Playa del Carmen y Aeropuerto de Cancún.
+\n
+\nTasa: BZ$19 se paga en BC, y el resto de la tarifa se paga cuando el autobús se detiene en Bacalar (Ene 2019).
+\n"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/ado_title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mas detalle"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ado_detail3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="https://www.ado.com.mx/
+\nBelice Ciudad: 625-5900
+\nPaseo Naranja: 624-8200, 302-2240
+\nCorozal: 663-3014
+\n"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>
