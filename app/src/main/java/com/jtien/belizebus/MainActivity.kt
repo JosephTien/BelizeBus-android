@@ -121,7 +121,11 @@ class MainActivity : AppCompatActivity(){
             true
         }
         R.id.page_taxi -> {
-            showToast(getString(R.string.tobecontinue))
+            //showToast(getString(R.string.tobecontinue))
+            if(ConnectivityHelper.isConnectedToNetwork(applicationContext)) {
+                val url = "http://belizetaxi.jtien.info"
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
             true
         }
         else -> {

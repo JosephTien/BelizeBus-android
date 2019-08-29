@@ -56,9 +56,11 @@ class MainAdoActivity : AppCompatActivity(){
             true
         }
         R.id.page_taxi -> {
-            Toast.makeText(applicationContext,
-                    getString(R.string.tobecontinue),
-                    Toast.LENGTH_SHORT).show()
+            //Toast.makeText(applicationContext,getString(R.string.tobecontinue),Toast.LENGTH_SHORT).show()
+            if(ConnectivityHelper.isConnectedToNetwork(applicationContext)) {
+                val url = "http://belizetaxi.jtien.info"
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
             true
         }
         else -> {

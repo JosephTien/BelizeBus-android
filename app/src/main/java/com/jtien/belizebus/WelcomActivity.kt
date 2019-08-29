@@ -3,6 +3,8 @@ package com.jtien.belizebus
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Handler
 import android.view.View
 
@@ -48,5 +50,30 @@ class WelcomeActivity : AppCompatActivity() {
                 // Hide the nav bar and status bar
                 or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 or View.SYSTEM_UI_FLAG_FULLSCREEN)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(setFontScaleToDefault(newConfig))
+    }
+
+    override fun getResources(): Resources {
+        setFontScaleToDefault()
+        return super.getResources()
+    }
+    private fun setFontScaleToDefault(newConfig: Configuration): Configuration{
+        val res = super.getResources()
+        if (res.configuration.fontScale !== 1.0f) {
+            newConfig.setToDefaults()
+            res.updateConfiguration(newConfig, res.displayMetrics)
+        }
+        return newConfig
+    }
+    private fun setFontScaleToDefault(){
+        val res = super.getResources()
+        if (res.configuration.fontScale !== 1.0f) {
+            val newConfig = Configuration()
+            newConfig.setToDefaults()
+            res.updateConfiguration(newConfig, res.displayMetrics)
+        }
     }
 }

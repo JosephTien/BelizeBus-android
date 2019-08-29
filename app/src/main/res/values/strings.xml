@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BeliceBus</string>
+    <string name="app_name">Belize Bus</string>
     <string name="choose_start">Start Terminal...</string>
     <string name="choose_end" >Destination...</string>
     <string name="btn_before" >Arrive Before...</string>
@@ -8,7 +8,7 @@
     <string name="btn_search" >Search</string>
     <string name="btn_fullmode" >Full</string>
     <string name="btn_bus" >Bus</string>
-    <string name="btn_ferry" >Water Taxi</string>
+    <string name="btn_ferry" >Ferry</string>
     <string name="btn_ado" >ADO Mexico Bus</string>
     <string name="btn_taxi" >Taxi</string>
     <string name="sign_to" >↓</string>

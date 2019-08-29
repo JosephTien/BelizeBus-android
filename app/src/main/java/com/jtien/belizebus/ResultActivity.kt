@@ -52,9 +52,6 @@ class ResultActivity : AppCompatActivity() {
         supportActionBar?.customView?.findViewById<TextView>(R.id.tvTitle)?.text = getString(R.string.bar_result)
         supportActionBar?.setTitle(R.string.bar_result)
 
-        ///init/tag
-        setTag()
-
         ///init/weekdayMap
         weekdayMap = mapOf(
                 "Mon" to getString(R.string.Mon),
@@ -65,6 +62,9 @@ class ResultActivity : AppCompatActivity() {
                 "Sat" to getString(R.string.Sat),
                 "Sun" to getString(R.string.Sun)
         )
+
+        ///init/tag
+        setTag()
     }
 
     fun setTag(){
